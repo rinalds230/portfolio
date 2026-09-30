@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rinalds | Portfolio</title>
-  <meta name="description" content="Portfolio of Rinalds: about me and my projects.">
+  <title>Rinalds | Web developer</title>
+  <meta name="description" content="Rinalds is a web developer in training. See his projects: a football blog, an online quiz and a classroom app.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 
   <header class="site-header">
     <a class="logo" href="#top">Rinalds</a>
-    <nav>
+    <nav aria-label="Main">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -23,27 +23,32 @@
 
   <main id="top">
     <section class="hero">
-      <h1>I build things for the web.</h1>
-      <p class="lead">Hi, I'm Rinalds. I'm learning to design and code websites, and this page shows what I've made so far.</p>
-      <a class="button" href="#projects">See my projects</a>
+      <p class="status"><span class="dot"></span>Open to learning and new projects</p>
+      <h1>I build websites, one project at a time.</h1>
+      <p class="lead">Hi, I'm Rinalds, a web developer in training. I build blogs, quizzes and classroom tools with HTML, CSS and JavaScript.</p>
+      <div class="actions">
+        <a class="button" href="#projects">See my projects</a>
+        <a class="button ghost" href="https://github.com/rinalds230">My GitHub</a>
+      </div>
     </section>
 
     <section id="about" class="section">
       <h2>About me</h2>
       <div class="about-grid">
         <div class="prose">
-          <!-- EDIT: write about yourself -->
-          <p>I'm a beginner web developer based in Cyprus. I like turning ideas into working pages, and I'm learning something new with every project.</p>
-          <p>Outside of coding you'll find me listening to music, watching the markets and exploring new tools.</p>
+          <!-- EDIT: replace with your own story -->
+          <p>I'm based in Cyprus and I'm teaching myself to code by building real things instead of only following tutorials.</p>
+          <p>I love football, so I built a blog about it. I also like working with other people, and two of my projects are team builds where I learned how to share code on GitHub.</p>
         </div>
         <div class="skills">
-          <h3>Skills</h3>
+          <h3>What I use</h3>
           <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
             <li>Git &amp; GitHub</li>
             <li>VS Code</li>
+            <li>Vercel</li>
           </ul>
         </div>
       </div>
@@ -51,48 +56,48 @@
 
     <section id="projects" class="section">
       <h2>Projects</h2>
-      <!-- EDIT: replace these examples with your own projects -->
-      <article class="project">
-        <div>
-          <h3>Personal portfolio</h3>
-          <p>The site you're looking at. Built with plain HTML and CSS, responsive on phone and desktop.</p>
-        </div>
-        <ul class="tags"><li>HTML</li><li>CSS</li></ul>
-        <a href="https://github.com/rinalds230/portfolio">View code</a>
-      </article>
+      <div class="project-list">
 
-      <article class="project">
-        <div>
-          <h3>To-do list app</h3>
-          <p>Add, complete and delete tasks. Tasks are saved in the browser so they're still there when you come back.</p>
-        </div>
-        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-        <a href="#">View code</a>
-      </article>
+        <!-- EDIT: check each description matches what the project really does -->
+        <article class="project">
+          <p class="meta">Solo project</p>
+          <h3>Football blog</h3>
+          <p>A blog about football where I write and publish posts. My first full website.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a class="repo" href="https://github.com/rinalds230/Football-blog-web">View on GitHub</a>
+        </article>
 
-      <article class="project">
-        <div>
-          <h3>Weather checker</h3>
-          <p>Search for a city and see the current temperature and conditions using a public weather API.</p>
-        </div>
-        <ul class="tags"><li>JavaScript</li><li>API</li></ul>
-        <a href="#">View code</a>
-      </article>
+        <article class="project">
+          <p class="meta">Team project</p>
+          <h3>Online quiz</h3>
+          <p>A quiz you play in the browser: answer questions and see how you scored.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a class="repo" href="https://github.com/rumor1337/online-quiz">View on GitHub</a>
+        </article>
+
+        <article class="project">
+          <p class="meta">Team project</p>
+          <h3>Classroom</h3>
+          <p>A classroom app built with a teammate, where I practiced working together on one codebase.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a class="repo" href="https://github.com/officialErnests/classroom">View on GitHub</a>
+        </article>
+
+      </div>
     </section>
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p class="lead">Want to work together or just say hi? Send me a message.</p>
-      <!-- EDIT: put your real email and links -->
-      <p><a class="email" href="mailto:you@example.com">you@example.com</a></p>
-      <p class="links">
-        <a href="https://github.com/rinalds230">GitHub</a>
-      </p>
+      <p class="lead">Want to work together or just say hi? Send me an email.</p>
+      <!-- EDIT: use the email you want visitors to see -->
+      <p><a class="email" href="mailto:rinalds.gnedlers@gmail.com">rinalds.gnedlers@gmail.com</a></p>
+      <p class="links"><a href="https://github.com/rinalds230">GitHub</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Rinalds</p>
+    <a href="#top">Back to top</a>
   </footer>
 
 </body>
