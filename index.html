@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rinalds | Web developer</title>
-  <meta name="description" content="Rinalds is a web developer in training. See his projects: a football blog, an online quiz and a classroom app.">
+  <title>Rinalds | Tīmekļa izstrādātājs no Cēsīm</title>
+  <meta name="description" content="Rinalds ir topošais tīmekļa izstrādātājs no Cēsīm, Latvijā. Apskati viņa projektus: futbola blogu, tiešsaistes viktorīnu un lapu par Latvijas dzīvniekiem.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&subset=latin-ext&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
     <a class="logo" href="#top">Rinalds</a>
-    <nav aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <nav aria-label="Galvenā navigācija">
+      <a href="#about">Par mani</a>
+      <a href="#projects">Projekti</a>
+      <a href="#contact">Kontakti</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <p class="status"><span class="dot"></span>Open to learning and new projects</p>
-      <h1>I build websites, one project at a time.</h1>
-      <p class="lead">Hi, I'm Rinalds, a web developer in training. I build blogs, quizzes and classroom tools with HTML, CSS and JavaScript.</p>
+      <p class="status"><span class="dot"></span>Atvērts mācībām un jauniem projektiem</p>
+      <h1>Es veidoju mājaslapas – projektu pēc projekta.</h1>
+      <p class="lead">Sveiki, esmu Rinalds – topošais tīmekļa izstrādātājs no Cēsīm. Ar HTML, CSS un JavaScript veidoju blogus, viktorīnas un informatīvas lapas.</p>
       <div class="actions">
-        <a class="button" href="#projects">See my projects</a>
-        <a class="button ghost" href="https://github.com/rinalds230">My GitHub</a>
+        <a class="button" href="#projects">Apskatīt projektus</a>
+        <a class="button ghost" href="https://github.com/rinalds230" target="_blank" rel="noopener">Mans GitHub</a>
       </div>
     </section>
 
     <section id="about" class="section">
-      <h2>About me</h2>
+      <h2>Par mani</h2>
       <div class="about-grid">
         <div class="prose">
-          <!-- EDIT: replace with your own story -->
-          <p>I'm based in Cyprus and I'm teaching myself to code by building real things instead of only following tutorials.</p>
-          <p>I love football, so I built a blog about it. I also like working with other people, and two of my projects are team builds where I learned how to share code on GitHub.</p>
+          <p>Dzīvoju Cēsīs, Latvijā, un mācos programmēt, veidojot īstus projektus, nevis tikai sekojot pamācībām.</p>
+          <p>Man patīk futbols, tāpēc izveidoju par to blogu. Man patīk arī strādāt komandā – viens no maniem projektiem ir kopdarbs, kurā iemācījos kopīgi strādāt ar kodu GitHub.</p>
         </div>
         <div class="skills">
-          <h3>What I use</h3>
+          <h3>Ko izmantoju</h3>
           <ul>
             <li>HTML</li>
             <li>CSS</li>
@@ -55,49 +54,48 @@
     </section>
 
     <section id="projects" class="section">
-      <h2>Projects</h2>
+      <h2>Projekti</h2>
       <div class="project-list">
 
-        <!-- EDIT: check each description matches what the project really does -->
         <article class="project">
-          <p class="meta">Solo project</p>
-          <h3>Football blog</h3>
-          <p>A blog about football where I write and publish posts. My first full website.</p>
+          <p class="meta">Individuāls projekts</p>
+          <h3>Futbola blogs</h3>
+          <p>Blogs par futbolu, kurā rakstu un publicēju ierakstus. Mana pirmā pilnā mājaslapa.</p>
           <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="repo" href="https://github.com/rinalds230/Football-blog-web">View on GitHub</a>
+          <a class="repo" href="https://github.com/rinalds230/Football-blog-web" target="_blank" rel="noopener">Skatīt GitHub</a>
         </article>
 
         <article class="project">
-          <p class="meta">Team project</p>
-          <h3>Online quiz</h3>
-          <p>A quiz you play in the browser: answer questions and see how you scored.</p>
+          <p class="meta">Komandas projekts</p>
+          <h3>Tiešsaistes viktorīna</h3>
+          <p>Viktorīna pārlūkā: atbildi uz jautājumiem un uzzini savu rezultātu.</p>
           <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="repo" href="https://github.com/rumor1337/online-quiz">View on GitHub</a>
+          <a class="repo" href="https://github.com/rumor1337/online-quiz" target="_blank" rel="noopener">Skatīt GitHub</a>
         </article>
 
         <article class="project">
-          <p class="meta">Team project</p>
-          <h3>Classroom</h3>
-          <p>A classroom app built with a teammate, where I practiced working together on one codebase.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="repo" href="https://github.com/officialErnests/classroom">View on GitHub</a>
+          <p class="meta">Individuāls projekts</p>
+          <h3>Dzīvnieki Latvijā</h3>
+          <p>Informatīva mājaslapa par Latvijā sastopamajiem dzīvniekiem. Publicēta tiešsaistē ar Vercel.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+          <a class="repo" href="https://github.com/rinalds230/jauns" target="_blank" rel="noopener">Skatīt GitHub</a>
+          <a class="repo" href="https://jauns.vercel.app" target="_blank" rel="noopener">Atvērt lapu</a>
         </article>
 
       </div>
     </section>
 
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p class="lead">Want to work together or just say hi? Send me an email.</p>
-      <!-- EDIT: use the email you want visitors to see -->
+      <h2>Kontakti</h2>
+      <p class="lead">Vēlies sadarboties vai vienkārši pasveicināt? Raksti man e-pastu.</p>
       <p><a class="email" href="mailto:rinalds.gnedlers@gmail.com">rinalds.gnedlers@gmail.com</a></p>
-      <p class="links"><a href="https://github.com/rinalds230">GitHub</a></p>
+      <p class="links"><a href="https://github.com/rinalds230" target="_blank" rel="noopener">GitHub</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Rinalds</p>
-    <a href="#top">Back to top</a>
+    <p>&copy; 2026 Rinalds · Cēsis, Latvija</p>
+    <a href="#top">Uz augšu</a>
   </footer>
 
 </body>
