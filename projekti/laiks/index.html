@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laikapstākļi – Cēsis un Latvija</title>
+  <meta name="description" content="Laika prognoze Cēsīm un citām Latvijas pilsētām: tagadējie laikapstākļi, nākamās 24 stundas un 7 dienu prognoze.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="back" href="../../">← Uz portfolio</a>
+      <form id="search" class="search" autocomplete="off">
+        <label class="visually-hidden" for="city">Meklēt pilsētu</label>
+        <input id="city" type="search" placeholder="Meklēt Latvijas pilsētu…">
+        <button type="submit">Meklēt</button>
+      </form>
+    </header>
+
+    <nav class="quick" aria-label="Pilsētas">
+      <button data-city="Cēsis" data-lat="57.3119" data-lon="25.2706">Cēsis</button>
+      <button data-city="Rīga" data-lat="56.9496" data-lon="24.1052">Rīga</button>
+      <button data-city="Valmiera" data-lat="57.5385" data-lon="25.4264">Valmiera</button>
+      <button data-city="Sigulda" data-lat="57.1538" data-lon="24.8595">Sigulda</button>
+      <button data-city="Liepāja" data-lat="56.5047" data-lon="21.0108">Liepāja</button>
+      <button data-city="Daugavpils" data-lat="55.8747" data-lon="26.5362">Daugavpils</button>
+    </nav>
+
+    <p id="message" class="message" hidden></p>
+
+    <main id="app" aria-live="polite">
+      <section class="now">
+        <div>
+          <p class="place" id="place">Cēsis</p>
+          <p class="updated" id="updated">Ielādē…</p>
+          <div class="temp-row">
+            <span class="icon" id="nowIcon">⏳</span>
+            <span class="temp" id="nowTemp">--°</span>
+          </div>
+          <p class="desc" id="nowDesc"></p>
+        </div>
+        <dl class="details">
+          <div><dt>Sajūtu temp.</dt><dd id="feels">--</dd></div>
+          <div><dt>Vējš</dt><dd id="wind">--</dd></div>
+          <div><dt>Mitrums</dt><dd id="humidity">--</dd></div>
+          <div><dt>Saullēkts / riets</dt><dd id="sun">--</dd></div>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2>Nākamās 24 stundas</h2>
+        <div class="hours" id="hours"></div>
+      </section>
+
+      <section class="card">
+        <h2>7 dienu prognoze</h2>
+        <ul class="days" id="days"></ul>
+      </section>
+    </main>
+
+    <footer class="foot">
+      Dati: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · Izveidoja Rinalds, Cēsis
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

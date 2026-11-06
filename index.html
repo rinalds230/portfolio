@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rinalds | Tīmekļa izstrādātājs no Cēsīm</title>
-  <meta name="description" content="Rinalds ir topošais tīmekļa izstrādātājs no Cēsīm, Latvijā. Apskati viņa projektus: futbola blogu, tiešsaistes viktorīnu un lapu par Latvijas dzīvniekiem.">
+  <meta name="description" content="Rinalds ir topošais tīmekļa izstrādātājs no Cēsīm, Latvijā. Projekti: futbola ziņu portāls Footy, laika prognozes lietotne un futbola viktorīna.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
-    <a class="logo" href="#top">Rinalds</a>
+    <a class="logo" href="#top">Rinalds<span>.</span></a>
     <nav aria-label="Galvenā navigācija">
       <a href="#about">Par mani</a>
+      <a href="#skills">Prasmes</a>
       <a href="#projects">Projekti</a>
       <a href="#contact">Kontakti</a>
     </nav>
@@ -23,81 +24,195 @@
 
   <main id="top">
     <section class="hero">
-      <p class="status"><span class="dot"></span>Atvērts mācībām un jauniem projektiem</p>
-      <h1>Es veidoju mājaslapas – projektu pēc projekta.</h1>
-      <p class="lead">Sveiki, esmu Rinalds – topošais tīmekļa izstrādātājs no Cēsīm. Ar HTML, CSS un JavaScript veidoju blogus, viktorīnas un informatīvas lapas.</p>
-      <div class="actions">
-        <a class="button" href="#projects">Apskatīt projektus</a>
-        <a class="button ghost" href="https://github.com/rinalds230" target="_blank" rel="noopener">Mans GitHub</a>
+      <div class="hero-text">
+        <p class="status"><span class="dot"></span>Atvērts sadarbībai un jauniem projektiem</p>
+        <h1>Pārvēršu idejas <em>strādājošās</em> mājaslapās.</h1>
+        <p class="lead">Esmu Rinalds – topošais tīmekļa izstrādātājs no Cēsīm. Veidoju gan to, ko lietotājs redz pārlūkā, gan to, kas notiek aiz tā: serveri, datubāzes un lietotāju kontus.</p>
+        <div class="actions">
+          <a class="button" href="#projects">Apskatīt projektus</a>
+          <a class="button ghost" href="https://github.com/rinalds230" target="_blank" rel="noopener">Mans GitHub</a>
+        </div>
       </div>
+
+      <aside class="hero-card" aria-label="Īsumā par mani">
+        <div class="hc-row">
+          <span class="hc-label">Atrašanās vieta</span>
+          <span class="hc-value">📍 Cēsis, Latvija</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Vietējais laiks</span>
+          <span class="hc-value" id="localTime">--:--</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Laiks Cēsīs šobrīd</span>
+          <span class="hc-value" id="cesisWeather">Ielādē…</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-label">Šobrīd mācos</span>
+          <span class="hc-value">Laravel un PHP</span>
+        </div>
+      </aside>
     </section>
 
     <section id="about" class="section">
-      <h2>Par mani</h2>
-      <div class="about-grid">
-        <div class="prose">
-          <p>Dzīvoju Cēsīs, Latvijā, un mācos programmēt, veidojot īstus projektus, nevis tikai sekojot pamācībām.</p>
-          <p>Man patīk futbols, tāpēc izveidoju par to blogu. Man patīk arī strādāt komandā – viens no maniem projektiem ir kopdarbs, kurā iemācījos kopīgi strādāt ar kodu GitHub.</p>
-        </div>
-        <div class="skills">
-          <h3>Ko izmantoju</h3>
+      <p class="eyebrow">01 · Par mani</p>
+      <h2>Mācos, veidojot īstas lietas</h2>
+      <div class="prose">
+        <p>Dzīvoju Cēsīs un mācos programmēt, veidojot īstus projektus, nevis tikai sekojot pamācībām. Sāku ar HTML un CSS, bet tagad strādāju arī ar PHP, Laravel un datubāzēm.</p>
+        <p>Man patīk futbols, tāpēc mans lielākais projekts ir futbola ziņu portāls ar lietotāju kontiem, jaunākajām ziņām un piecu lielāko Eiropas līgu tabulām. Esmu strādājis arī komandā un zinu, kā kopīgi strādāt ar kodu GitHub.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <p class="eyebrow">02 · Prasmes</p>
+      <h2>Ar ko strādāju</h2>
+      <div class="skill-grid">
+        <div class="skill-group">
+          <h3>Frontend</h3>
           <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
+            <li>Responsīvs dizains</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <ul>
+            <li>PHP</li>
+            <li>Laravel</li>
+            <li>Blade</li>
+            <li>REST API</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Datubāzes</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>SQLite</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Rīki</h3>
+          <ul>
             <li>Git &amp; GitHub</li>
             <li>VS Code</li>
+            <li>Laragon</li>
             <li>Vercel</li>
+            <li>Replit</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="projects" class="section">
-      <h2>Projekti</h2>
+      <p class="eyebrow">03 · Projekti</p>
+      <h2>Ko esmu izveidojis</h2>
       <div class="project-list">
 
         <article class="project">
-          <p class="meta">Individuāls projekts</p>
-          <h3>Futbola blogs</h3>
-          <p>Blogs par futbolu, kurā rakstu un publicēju ierakstus. Mana pirmā pilnā mājaslapa.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="repo" href="https://github.com/rinalds230/Football-blog-web" target="_blank" rel="noopener">Skatīt GitHub</a>
-          <a class="repo" href="https://footy--rinaldsgnedlers.replit.app" target="_blank" rel="noopener">Atvērt lapu</a>
+          <div class="preview preview-footy" aria-hidden="true">
+            <div class="fp-top"><span class="fp-logo">Footy</span><span class="fp-search">Meklēt…</span></div>
+            <div class="fp-news">
+              <span class="fp-tag">Jaunākās ziņas</span>
+              <span class="fp-line"></span><span class="fp-line short"></span>
+            </div>
+            <div class="fp-table">
+              <span class="fp-tag">Turnīra tabula</span>
+              <div class="fp-row"><b>1</b><span class="fp-bar" style="width:80%"></span><i>28</i></div>
+              <div class="fp-row"><b>2</b><span class="fp-bar" style="width:70%"></span><i>25</i></div>
+              <div class="fp-row"><b>3</b><span class="fp-bar" style="width:62%"></span><i>23</i></div>
+            </div>
+            <div class="fp-leagues">
+              <span>Premier League</span><span>La Liga</span><span>Serie A</span><span>Bundesliga</span><span>Ligue 1</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="meta">Lielākais projekts · PHP</p>
+            <h3>Footy – futbola ziņu portāls</h3>
+            <p>Futbola ziņu portāls ar reģistrāciju un pieteikšanos. Ziņas tiek automātiski ielādētas no RSS plūsmas, ir piecu lielāko Eiropas līgu turnīra tabulas, lapu meklēšana un kontaktforma, kuras ziņojumi tiek saglabāti datubāzē.</p>
+            <ul class="tags"><li>PHP</li><li>SQLite</li><li>JavaScript</li><li>CSS</li><li>RSS</li></ul>
+            <p class="note">Lai apskatītu saturu, lapā jāizveido konts.</p>
+            <div class="project-links">
+              <a class="button small" href="https://footy--rinaldsgnedlers.replit.app" target="_blank" rel="noopener">Atvērt lapu ↗</a>
+              <a class="button small ghost" href="https://github.com/rinalds230/Football-blog-web" target="_blank" rel="noopener">Kods GitHub</a>
+            </div>
+          </div>
         </article>
 
         <article class="project">
-          <p class="meta">Komandas projekts</p>
-          <h3>Tiešsaistes viktorīna</h3>
-          <p>Viktorīna pārlūkā: atbildi uz jautājumiem un uzzini savu rezultātu.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          <a class="repo" href="https://github.com/rumor1337/online-quiz" target="_blank" rel="noopener">Skatīt GitHub</a>
+          <a class="preview" href="projekti/laiks/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="img/laiks.jpg" alt="" width="1280" height="800" loading="lazy">
+          </a>
+          <div class="project-body">
+            <p class="meta">API projekts · JavaScript</p>
+            <h3>Laikapstākļi Cēsīs</h3>
+            <p>Laika prognoze Cēsīm un citām Latvijas pilsētām ar reāllaika datiem no Open-Meteo API: tagadējie laikapstākļi, nākamās 24 stundas un 7 dienu prognoze. Pilsētu var meklēt, un lietotne atceras pēdējo izvēlēto.</p>
+            <ul class="tags"><li>JavaScript</li><li>Fetch API</li><li>CSS Grid</li><li>localStorage</li></ul>
+            <div class="project-links">
+              <a class="button small" href="projekti/laiks/" target="_blank" rel="noopener">Atvērt lapu ↗</a>
+              <a class="button small ghost" href="https://github.com/rinalds230/portfolio/tree/main/projekti/laiks" target="_blank" rel="noopener">Kods GitHub</a>
+            </div>
+          </div>
         </article>
 
         <article class="project">
-          <p class="meta">Individuāls projekts</p>
-          <h3>Dzīvnieki Latvijā</h3>
-          <p>Informatīva mājaslapa par Latvijā sastopamajiem dzīvniekiem. Publicēta tiešsaistē ar Vercel.</p>
-          <ul class="tags"><li>HTML</li><li>CSS</li></ul>
-          <a class="repo" href="https://github.com/rinalds230/jauns" target="_blank" rel="noopener">Skatīt GitHub</a>
-          <a class="repo" href="https://jauns.vercel.app" target="_blank" rel="noopener">Atvērt lapu</a>
+          <a class="preview" href="projekti/viktorina/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="img/viktorina.jpg" alt="" width="1280" height="800" loading="lazy">
+          </a>
+          <div class="project-body">
+            <p class="meta">Spēle · JavaScript</p>
+            <h3>Futbola viktorīna</h3>
+            <p>Interaktīva viktorīna ar vairāk nekā 30 jautājumiem par pasaules un Latvijas futbolu. Katram jautājumam ir taimeris, punkti tiek doti par ātrumu un sērijām, rekords saglabājas, un beigās var apskatīt savas kļūdas.</p>
+            <ul class="tags"><li>JavaScript</li><li>DOM</li><li>localStorage</li><li>CSS animācijas</li></ul>
+            <div class="project-links">
+              <a class="button small" href="projekti/viktorina/" target="_blank" rel="noopener">Spēlēt ↗</a>
+              <a class="button small ghost" href="https://github.com/rinalds230/portfolio/tree/main/projekti/viktorina" target="_blank" rel="noopener">Kods GitHub</a>
+            </div>
+          </div>
         </article>
 
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Kontakti</h2>
-      <p class="lead">Vēlies sadarboties vai vienkārši pasveicināt? Raksti man e-pastu.</p>
-      <p><a class="email" href="mailto:rinalds.gnedlers@gmail.com">rinalds.gnedlers@gmail.com</a></p>
-      <p class="links"><a href="https://github.com/rinalds230" target="_blank" rel="noopener">GitHub</a></p>
+    <section id="contact" class="section contact">
+      <p class="eyebrow">04 · Kontakti</p>
+      <h2>Parunāsim!</h2>
+      <p class="lead">Vēlies sadarboties, piedāvāt praksi vai vienkārši pasveicināt? Raksti man e-pastu.</p>
+      <a class="email" href="mailto:rinalds.gnedlers@gmail.com">rinalds.gnedlers@gmail.com</a>
+      <ul class="contact-list">
+        <li><span>GitHub</span><a href="https://github.com/rinalds230" target="_blank" rel="noopener">github.com/rinalds230</a></li>
+        <li><span>Atrašanās vieta</span>Cēsis, Latvija</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 Rinalds · Cēsis, Latvija</p>
-    <a href="#top">Uz augšu</a>
+    <a href="#top">Uz augšu ↑</a>
   </footer>
 
+  <script>
+    // Vietējais laiks Latvijā
+    const timeEl = document.getElementById("localTime");
+    const tick = () => {
+      timeEl.textContent = new Date().toLocaleTimeString("lv-LV", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Riga" });
+    };
+    tick();
+    setInterval(tick, 30000);
+
+    // Tagadējie laikapstākļi Cēsīs (Open-Meteo)
+    const ICONS = { 0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️", 45: "🌫️", 48: "🌫️", 61: "🌧️", 63: "🌧️", 65: "🌧️", 71: "🌨️", 73: "🌨️", 75: "❄️", 80: "🌦️", 81: "🌧️", 82: "⛈️", 95: "⛈️" };
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=57.3119&longitude=25.2706&current=temperature_2m,weather_code&timezone=Europe/Riga")
+      .then((r) => r.json())
+      .then((d) => {
+        const c = d.current;
+        document.getElementById("cesisWeather").textContent = `${ICONS[c.weather_code] || "🌡️"} ${Math.round(c.temperature_2m)}°C`;
+      })
+      .catch(() => {
+        document.getElementById("cesisWeather").textContent = "Nav pieejams";
+      });
+  </script>
 </body>
 </html>

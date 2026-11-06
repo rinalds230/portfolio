@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Futbola viktorīna</title>
+  <meta name="description" content="Pārbaudi savas futbola zināšanas: 10 jautājumi, 15 sekundes katram, punkti par ātrumu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="back" href="../../">← Uz portfolio</a>
+      <span class="best">Rekords: <strong id="best">0</strong></span>
+    </header>
+
+    <!-- Sākuma ekrāns -->
+    <section id="start" class="screen card">
+      <p class="kicker">⚽ Futbola viktorīna</p>
+      <h1>Cik labi tu pazīsti futbolu?</h1>
+      <p class="sub">10 nejauši jautājumi par pasaules un Latvijas futbolu. Katram jautājumam ir 15 sekundes. Jo ātrāk atbildi, jo vairāk punktu.</p>
+      <ul class="rules">
+        <li><strong>100</strong> punkti par pareizu atbildi</li>
+        <li><strong>+ līdz 50</strong> bonuss par ātrumu</li>
+        <li><strong>3 pēc kārtas</strong> pareizi – sērijas bonuss</li>
+      </ul>
+      <button class="btn" id="startBtn">Sākt spēli</button>
+    </section>
+
+    <!-- Jautājums -->
+    <section id="game" class="screen card" hidden>
+      <div class="hud">
+        <span id="counter">1 / 10</span>
+        <span id="streak" class="streak" hidden>🔥 <span id="streakNum">0</span></span>
+        <span id="score">0 p.</span>
+      </div>
+      <div class="progress"><span id="progress"></span></div>
+
+      <div class="timer" aria-hidden="true"><span id="timerBar"></span></div>
+      <p class="time-left"><span id="timeLeft">15</span> s</p>
+
+      <h2 id="question"></h2>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button class="btn" id="nextBtn" hidden>Nākamais jautājums →</button>
+    </section>
+
+    <!-- Rezultāts -->
+    <section id="result" class="screen card" hidden>
+      <p class="kicker">Spēle beigusies</p>
+      <h1 id="resultTitle"></h1>
+      <div class="stats">
+        <div><span id="finalScore">0</span><small>punkti</small></div>
+        <div><span id="finalCorrect">0/10</span><small>pareizi</small></div>
+        <div><span id="finalStreak">0</span><small>garākā sērija</small></div>
+      </div>
+      <p id="newBest" class="new-best" hidden>🏆 Jauns rekords!</p>
+      <details id="reviewBox" class="review">
+        <summary>Apskatīt kļūdas</summary>
+        <ol id="review"></ol>
+      </details>
+      <button class="btn" id="againBtn">Spēlēt vēlreiz</button>
+    </section>
+  </div>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
