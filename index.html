@@ -20,13 +20,15 @@
       <a href="#projects">Projekti</a>
       <a href="#contact">Kontakti</a>
     </nav>
+    <span class="scroll-bar" id="scrollBar" aria-hidden="true"></span>
   </header>
 
   <main id="top">
     <section class="hero">
+      <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="hero-text">
         <p class="status"><span class="dot"></span>Atvērts sadarbībai un jauniem projektiem</p>
-        <h1>Pārvēršu idejas <em>strādājošās</em> mājaslapās.</h1>
+        <h1><span class="w" style="--i:0">Pārvēršu</span> <span class="w" style="--i:1">idejas</span> <em class="w" style="--i:2">strādājošās</em> <span class="w" style="--i:3">mājaslapās.</span></h1>
         <p class="lead">Esmu Rinalds – topošais tīmekļa izstrādātājs no Cēsīm. Veidoju gan to, ko lietotājs redz pārlūkā, gan to, kas notiek aiz tā: serveri, datubāzes un lietotāju kontus.</p>
         <div class="actions">
           <a class="button" href="#projects">Apskatīt projektus</a>
@@ -183,6 +185,49 @@
   </footer>
 
   <script>
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Ritināšanas josla galvenē
+    const bar = document.getElementById("scrollBar");
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    };
+    addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Sadaļas un kartītes parādās, kad tās ieritina ekrānā
+    if (!calm && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("js");
+      const items = document.querySelectorAll(".section > :not(.skill-grid):not(.project-list), .skill-group, .project");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          // kartītes vienā rindā parādās viena pēc otras
+          const delay = [...el.parentElement.children].indexOf(el) * 90;
+          el.style.transitionDelay = `${delay}ms`;
+          el.classList.add("in");
+          io.unobserve(el);
+          // pēc animācijas noņem klases, lai hover efekti strādā ātri
+          setTimeout(() => {
+            el.classList.remove("reveal", "in");
+            el.style.transitionDelay = "";
+          }, 900 + delay);
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+      items.forEach((el) => { el.classList.add("reveal"); io.observe(el); });
+    }
+
+    // Gaismas aplis kartītēs seko pelei
+    document.querySelectorAll(".project, .skill-group").forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      });
+    });
+
     // Koda redaktors, kurā kods "pats uzrakstās"
     // Katrs gabals: [teksts, krāsas klase]
     const CODE = [
@@ -203,7 +248,7 @@
     // Neredzama pilna kopija tur loga izmēru, kamēr kods rakstās
     document.getElementById("ghost").innerHTML = html(CODE);
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (calm) {
       codeEl.innerHTML = html(CODE);
     } else {
       let part = 0, char = 0;
