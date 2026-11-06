@@ -50,14 +50,6 @@
     </section>
   </main>
 
-  <!-- Tehnoloģiju josla -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span><span>SQLite</span><span>PostgreSQL</span><span>Git</span><span>GitHub</span><span>REST API</span>
-      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span><span>SQLite</span><span>PostgreSQL</span><span>Git</span><span>GitHub</span><span>REST API</span>
-    </div>
-  </div>
-
   <div class="container">
     <!-- Par mani + prasmes -->
     <section id="about" class="section">
@@ -65,7 +57,7 @@
         <article class="tile tile-intro">
           <p class="eyebrow">01 · Par mani</p>
           <h2>Mācos, veidojot īstas lietas</h2>
-          <p>Dzīvoju Cēsīs un mācos programmēt, veidojot īstus projektus, nevis tikai sekojot pamācībām. Sāku ar HTML un CSS, bet tagad strādāju arī ar PHP, Laravel un datubāzēm.</p>
+          <p>Dzīvoju Cēsīs un mācos programmēt, veidojot īstus projektus, nevis tikai sekojot pamācībām. Man patīk saprast, kā mājaslapa strādā no sākuma līdz beigām – no dizaina pārlūkā līdz datiem serverī.</p>
           <p>Man patīk futbols, tāpēc mans lielākais projekts ir futbola ziņu portāls ar lietotāju kontiem, jaunākajām ziņām un piecu lielāko Eiropas līgu tabulām. Esmu strādājis arī komandā un zinu, kā kopīgi strādāt ar kodu GitHub.</p>
         </article>
 
@@ -76,10 +68,6 @@
           <p class="tile-sub">Vietējais laiks <strong id="localTime">--:--</strong></p>
         </article>
 
-        <article class="tile tile-stats">
-          <div><span class="count" data-to="3">3</span><small>projekti tiešsaistē</small></div>
-          <div><span class="count" data-to="16">16</span><small>tehnoloģijas un rīki</small></div>
-        </article>
 
         <article class="tile skill" id="skills">
           <p class="tile-label">Frontend</p>
@@ -98,17 +86,7 @@
           <ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Laragon</li><li>Vercel</li><li>Replit</li></ul>
         </article>
 
-        <article class="tile tile-learning">
-          <p class="tile-label"><span class="dot"></span> Šobrīd mācos</p>
-          <p class="tile-big">Laravel</p>
-          <p class="tile-sub">Maršruti, Blade šabloni un darbs ar datubāzēm</p>
-        </article>
 
-        <article class="tile tile-ball">
-          <span class="ball" aria-hidden="true">⚽</span>
-          <p class="tile-label">Ārpus koda</p>
-          <p class="tile-big">Futbols</p>
-        </article>
       </div>
     </section>
 
@@ -120,12 +98,11 @@
       </div>
 
       <div class="project-list">
-        <article class="project" style="--n:0">
+        <article class="project">
           <a class="preview" href="https://footy--rinaldsgnedlers.replit.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img src="img/footy.jpg" alt="" width="1440" height="900" loading="lazy">
           </a>
           <div class="project-body">
-            <span class="num">01</span>
             <p class="meta">Lielākais projekts · PHP</p>
             <h3>Footy – futbola ziņu portāls</h3>
             <p>Futbola ziņu portāls ar reģistrāciju un pieteikšanos. Ziņas tiek automātiski ielādētas no RSS plūsmas, ir piecu lielāko Eiropas līgu turnīra tabulas, lapu meklēšana un kontaktforma, kuras ziņojumi tiek saglabāti datubāzē.</p>
@@ -138,12 +115,11 @@
           </div>
         </article>
 
-        <article class="project" style="--n:1">
+        <article class="project">
           <a class="preview" href="https://rinalds230.github.io/laikapstakli-cesis/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img src="img/laiks.jpg" alt="" width="1280" height="800" loading="lazy">
           </a>
           <div class="project-body">
-            <span class="num">02</span>
             <p class="meta">API projekts · JavaScript</p>
             <h3>Laikapstākļi Cēsīs</h3>
             <p>Laika prognoze Cēsīm un citām Latvijas pilsētām ar reāllaika datiem no Open-Meteo API: tagadējie laikapstākļi, nākamās 24 stundas un 7 dienu prognoze. Pilsētu var meklēt, un lietotne atceras pēdējo izvēlēto.</p>
@@ -155,12 +131,11 @@
           </div>
         </article>
 
-        <article class="project" style="--n:2">
+        <article class="project">
           <a class="preview" href="https://rinalds230.github.io/futbola-viktorina/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img src="img/viktorina.jpg" alt="" width="1280" height="800" loading="lazy">
           </a>
           <div class="project-body">
-            <span class="num">03</span>
             <p class="meta">Spēle · JavaScript</p>
             <h3>Futbola viktorīna</h3>
             <p>Interaktīva viktorīna ar vairāk nekā 30 jautājumiem par pasaules un Latvijas futbolu. Katram jautājumam ir taimeris, punkti tiek doti par ātrumu un sērijām, rekords saglabājas, un beigās var apskatīt savas kļūdas.</p>
@@ -228,17 +203,6 @@
     tick();
     setInterval(tick, 30000);
 
-    // Skaitļi saskaitās, kad tie parādās ekrānā
-    const countUp = (el) => {
-      const to = Number(el.dataset.to);
-      const start = performance.now();
-      const step = (now) => {
-        const p = Math.min(1, (now - start) / 1200);
-        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
 
     // Elementi parādās, kad tos ieritina ekrānā
     if (!calm && "IntersectionObserver" in window) {
@@ -251,7 +215,6 @@
           const delay = Math.min([...el.parentElement.children].indexOf(el), 6) * 70;
           el.style.transitionDelay = `${delay}ms`;
           el.classList.add("in");
-          el.querySelectorAll(".count").forEach(countUp);
           io.unobserve(el);
           setTimeout(() => {
             el.classList.remove("reveal", "in");
