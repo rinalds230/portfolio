@@ -34,23 +34,12 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Īsumā par mani">
-        <div class="hc-row">
-          <span class="hc-label">Atrašanās vieta</span>
-          <span class="hc-value">📍 Cēsis, Latvija</span>
+      <aside class="editor" aria-label="Par mani koda veidā">
+        <div class="editor-bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="editor-file">rinalds.js</span>
         </div>
-        <div class="hc-row">
-          <span class="hc-label">Vietējais laiks</span>
-          <span class="hc-value" id="localTime">--:--</span>
-        </div>
-        <div class="hc-row">
-          <span class="hc-label">Laiks Cēsīs šobrīd</span>
-          <span class="hc-value" id="cesisWeather">Ielādē…</span>
-        </div>
-        <div class="hc-row">
-          <span class="hc-label">Šobrīd mācos</span>
-          <span class="hc-value">Laravel un PHP</span>
-        </div>
+        <pre class="editor-code"><code class="ghost" id="ghost" aria-hidden="true"></code><code class="live"><span id="code"></span><span class="cursor"></span></code></pre>
       </aside>
     </section>
 
@@ -194,25 +183,42 @@
   </footer>
 
   <script>
-    // Vietējais laiks Latvijā
-    const timeEl = document.getElementById("localTime");
-    const tick = () => {
-      timeEl.textContent = new Date().toLocaleTimeString("lv-LV", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Riga" });
-    };
-    tick();
-    setInterval(tick, 30000);
+    // Koda redaktors, kurā kods "pats uzrakstās"
+    // Katrs gabals: [teksts, krāsas klase]
+    const CODE = [
+      ["const ", "k"], ["rinalds", "v"], [" = {\n", "p"],
+      ["  vieta", "key"], [": ", "p"], ['"Cēsis, Latvija"', "s"], [",\n", "p"],
+      ["  loma", "key"], [": ", "p"], ['"Tīmekļa izstrādātājs"', "s"], [",\n", "p"],
+      ["  mācos", "key"], [": [", "p"], ['"Laravel"', "s"], [", ", "p"], ['"PHP"', "s"], ["],\n", "p"],
+      ["  hobijs", "key"], [": ", "p"], ['"futbols ⚽"', "s"], [",\n", "p"],
+      ["  kafija", "key"], [": ", "p"], ["true", "n"], [",\n", "p"],
+      ["  gatavsJaunamProjektam", "key"], [": ", "p"], ["true", "n"], [",\n", "p"],
+      ["};\n\n", "p"],
+      ["rinalds", "v"], [".", "p"], ["sveiki", "f"], ["();", "p"], ["  // 👋", "c"],
+    ];
 
-    // Tagadējie laikapstākļi Cēsīs (Open-Meteo)
-    const ICONS = { 0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️", 45: "🌫️", 48: "🌫️", 61: "🌧️", 63: "🌧️", 65: "🌧️", 71: "🌨️", 73: "🌨️", 75: "❄️", 80: "🌦️", 81: "🌧️", 82: "⛈️", 95: "⛈️" };
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=57.3119&longitude=25.2706&current=temperature_2m,weather_code&timezone=Europe/Riga")
-      .then((r) => r.json())
-      .then((d) => {
-        const c = d.current;
-        document.getElementById("cesisWeather").textContent = `${ICONS[c.weather_code] || "🌡️"} ${Math.round(c.temperature_2m)}°C`;
-      })
-      .catch(() => {
-        document.getElementById("cesisWeather").textContent = "Nav pieejams";
-      });
+    const codeEl = document.getElementById("code");
+    const escape = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+    const html = (parts) => parts.map(([t, c]) => `<span class="t-${c}">${escape(t)}</span>`).join("");
+
+    // Neredzama pilna kopija tur loga izmēru, kamēr kods rakstās
+    document.getElementById("ghost").innerHTML = html(CODE);
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      codeEl.innerHTML = html(CODE);
+    } else {
+      let part = 0, char = 0;
+      const type = () => {
+        if (part >= CODE.length) return;
+        const [text, cls] = CODE[part];
+        char++;
+        codeEl.innerHTML = html(CODE.slice(0, part)) + html([[text.slice(0, char), cls]]);
+        const typed = text[char - 1];
+        if (char >= text.length) { part++; char = 0; }
+        setTimeout(type, typed === "\n" ? 180 : 28 + Math.random() * 40);
+      };
+      setTimeout(type, 600);
+    }
   </script>
 </body>
 </html>

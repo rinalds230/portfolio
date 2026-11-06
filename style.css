@@ -47,7 +47,7 @@ a { color: var(--accent); }
 a:focus-visible, .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
 h1, h2, h3, .logo, nav a, .button, .meta, .tags, .status, .email, .eyebrow,
-.hero-card, .skill-group li, .contact-list span, .note, .site-footer {
+.skill-group li, .contact-list span, .note, .site-footer {
   font-family: var(--heading);
 }
 
@@ -133,18 +133,60 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .button:hover { transform: translateY(-2px); }
 .button.small { padding: 0.55rem 1.15rem; font-size: 0.92rem; }
 
-.hero-card {
-  padding: 0.5rem 1.5rem;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 1.25rem;
+/* Koda redaktors ievadā (vienmēr tumšs, kā īsts redaktors) */
+.editor {
+  background: #0f1a14;
+  border: 1px solid #22352a;
+  border-radius: 1rem;
   box-shadow: var(--shadow);
+  overflow: hidden;
+  transform: rotate(1.5deg);
   animation: rise 0.7s 0.15s ease-out both;
+  transition: transform 0.3s;
 }
-.hc-row { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.95rem 0; border-top: 1px solid var(--line); }
-.hc-row:first-child { border-top: 0; }
-.hc-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.hc-value { font-size: 1.15rem; font-weight: 700; }
+.editor:hover { transform: rotate(0deg); }
+.editor-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: #16241c;
+  border-bottom: 1px solid #22352a;
+}
+.lights { display: flex; gap: 0.4rem; }
+.lights i { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: #ff5f57; }
+.lights i:nth-child(2) { background: #febc2e; }
+.lights i:nth-child(3) { background: #28c840; }
+.editor-file { font-family: var(--heading); font-size: 0.82rem; color: #8fa89a; }
+.editor-code {
+  display: grid;
+  padding: 1.25rem 1.25rem 1.5rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: #d6e4dc;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.editor-code code { grid-area: 1 / 1; font: inherit; }
+.editor-code .ghost { visibility: hidden; }
+.t-k { color: #c792ea; }
+.t-v { color: #82aaff; }
+.t-key { color: #f0c674; }
+.t-s { color: #8ddb8c; }
+.t-n { color: #f78c6c; }
+.t-f { color: #4fd08e; }
+.t-c { color: #6b8577; font-style: italic; }
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.15em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  background: #4fd08e;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 
 /* Sadaļas */
 .section { padding: 5rem 0; border-top: 1px solid var(--line); }
@@ -300,8 +342,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 0 4.5rem; }
-  .hero-card { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5rem; }
-  .hc-row:nth-child(2) { border-top: 0; }
+  .editor { transform: none; }
   .skill-grid { grid-template-columns: 1fr 1fr; }
   .project { grid-template-columns: 1fr; }
   .project:nth-child(even) .preview { order: 0; }
@@ -315,8 +356,6 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
   .prose { grid-template-columns: 1fr; gap: 0; }
   .prose p + p { margin-top: 1rem; }
   .skill-grid { grid-template-columns: 1fr; }
-  .hero-card { grid-template-columns: 1fr; }
-  .hc-row:nth-child(2) { border-top: 1px solid var(--line); }
   .project-body { padding: 1.5rem; }
   .site-footer { flex-direction: column; }
 }
