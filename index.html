@@ -36,13 +36,14 @@
         </div>
       </div>
 
-      <aside class="editor" aria-label="Par mani koda veidā">
-        <div class="editor-bar">
-          <span class="lights"><i></i><i></i><i></i></span>
-          <span class="editor-file">rinalds.js</span>
-        </div>
-        <pre class="editor-code"><code class="ghost" id="ghost" aria-hidden="true"></code><code class="live"><span id="code"></span><span class="cursor"></span></code></pre>
-      </aside>
+      <a class="stack" href="#projects" aria-label="Apskatīt projektus">
+        <span class="shot s1"><img src="img/footy.jpg" alt="" width="1440" height="900"><b>Footy</b></span>
+        <span class="shot s2"><img src="img/laiks.jpg" alt="" width="1280" height="800"><b>Laikapstākļi Cēsīs</b></span>
+        <span class="shot s3"><img src="img/viktorina.jpg" alt="" width="1280" height="800"><b>Futbola viktorīna</b></span>
+        <span class="chip c1">PHP</span>
+        <span class="chip c2">JavaScript</span>
+        <span class="chip c3">Laravel</span>
+      </a>
     </section>
 
     <section id="about" class="section">
@@ -215,41 +216,6 @@
       });
     });
 
-    // Koda redaktors, kurā kods "pats uzrakstās"
-    // Katrs gabals: [teksts, krāsas klase]
-    const CODE = [
-      ["const ", "k"], ["rinalds", "v"], [" = {\n", "p"],
-      ["  vieta", "key"], [": ", "p"], ['"Cēsis, Latvija"', "s"], [",\n", "p"],
-      ["  loma", "key"], [": ", "p"], ['"Tīmekļa izstrādātājs"', "s"], [",\n", "p"],
-      ["  mācos", "key"], [": [", "p"], ['"Laravel"', "s"], [", ", "p"], ['"PHP"', "s"], ["],\n", "p"],
-      ["  hobijs", "key"], [": ", "p"], ['"futbols ⚽"', "s"], [",\n", "p"],
-      ["  gatavsJaunamProjektam", "key"], [": ", "p"], ["true", "n"], [",\n", "p"],
-      ["};\n\n", "p"],
-      ["rinalds", "v"], [".", "p"], ["sveiki", "f"], ["();", "p"], ["  // 👋", "c"],
-    ];
-
-    const codeEl = document.getElementById("code");
-    const escape = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-    const html = (parts) => parts.map(([t, c]) => `<span class="t-${c}">${escape(t)}</span>`).join("");
-
-    // Neredzama pilna kopija tur loga izmēru, kamēr kods rakstās
-    document.getElementById("ghost").innerHTML = html(CODE);
-
-    if (calm) {
-      codeEl.innerHTML = html(CODE);
-    } else {
-      let part = 0, char = 0;
-      const type = () => {
-        if (part >= CODE.length) return;
-        const [text, cls] = CODE[part];
-        char++;
-        codeEl.innerHTML = html(CODE.slice(0, part)) + html([[text.slice(0, char), cls]]);
-        const typed = text[char - 1];
-        if (char >= text.length) { part++; char = 0; }
-        setTimeout(type, typed === "\n" ? 180 : 28 + Math.random() * 40);
-      };
-      setTimeout(type, 600);
-    }
   </script>
 </body>
 </html>

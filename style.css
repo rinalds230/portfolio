@@ -85,7 +85,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 /* Ievads */
 .hero {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 3rem;
   align-items: center;
   padding: 5.5rem 0 6rem;
@@ -193,60 +193,80 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 .button:hover { transform: translateY(-2px); }
 .button.small { padding: 0.55rem 1.15rem; font-size: 0.92rem; }
 
-/* Koda redaktors ievadā (vienmēr tumšs, kā īsts redaktors) */
-.editor {
-  background: #0f1a14;
-  border: 1px solid #22352a;
-  border-radius: 1rem;
-  box-shadow: var(--shadow);
+/* Projektu kartīšu vēdeklis ievadā */
+.stack {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 0.95;
+  text-decoration: none;
+  animation: rise 0.8s 0.25s ease-out both;
+}
+.shot {
+  position: absolute;
+  left: 8%;
+  top: 22%;
+  width: 84%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.9rem;
   overflow: hidden;
-  transform: rotate(1.5deg);
-  animation: rise 0.7s 0.15s ease-out both;
-  transition: transform 0.3s;
+  border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  background: var(--panel-2);
+  transition: translate 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), rotate 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), scale 0.6s;
+  animation: bob 7s ease-in-out infinite;
 }
-.editor:hover { transform: rotate(0deg); }
-.editor-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.7rem 1rem;
-  background: #16241c;
-  border-bottom: 1px solid #22352a;
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.shot b {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  font-family: var(--heading);
+  font-size: 0.82rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s, transform 0.3s;
 }
-.lights { display: flex; gap: 0.4rem; }
-.lights i { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: #ff5f57; }
-.lights i:nth-child(2) { background: #febc2e; }
-.lights i:nth-child(3) { background: #28c840; }
-.editor-file { font-family: var(--heading); font-size: 0.82rem; color: #8fa89a; }
-.editor-code {
-  display: grid;
-  padding: 1.25rem 1.25rem 1.5rem;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 0.86rem;
-  line-height: 1.7;
-  color: #d6e4dc;
-  white-space: pre-wrap;
-  word-break: break-word;
+.s1 { z-index: 1; rotate: -9deg; translate: -10% -14%; animation-delay: -1s; }
+.s2 { z-index: 2; rotate: 6deg; translate: 10% -2%; animation-delay: -3.5s; }
+.s3 { z-index: 3; rotate: -2deg; translate: -2% 18%; animation-delay: -5.5s; }
+
+.stack:hover .s1 { rotate: -12deg; translate: -18% -26%; }
+.stack:hover .s2 { rotate: 9deg; translate: 18% -6%; }
+.stack:hover .s3 { rotate: -1deg; translate: -4% 28%; }
+.stack:hover .shot b { opacity: 1; transform: none; }
+.stack .shot:hover { scale: 1.04; z-index: 4; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-.editor-code code { grid-area: 1 / 1; font: inherit; }
-.editor-code .ghost { visibility: hidden; }
-.t-k { color: #c792ea; }
-.t-v { color: #82aaff; }
-.t-key { color: #f0c674; }
-.t-s { color: #8ddb8c; }
-.t-n { color: #f78c6c; }
-.t-f { color: #4fd08e; }
-.t-c { color: #6b8577; font-style: italic; }
-.cursor {
-  display: inline-block;
-  width: 0.55em;
-  height: 1.15em;
-  margin-left: 1px;
-  vertical-align: text-bottom;
-  background: #4fd08e;
-  animation: blink 1s steps(1) infinite;
+
+.chip {
+  position: absolute;
+  z-index: 5;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  animation: bob 5s ease-in-out infinite;
 }
-@keyframes blink { 50% { opacity: 0; } }
+.chip::before { content: "● "; color: var(--accent); }
+.c1 { top: 4%; right: 6%; animation-delay: -2s; }
+.c2 { bottom: 4%; left: 0; animation-delay: -4s; }
+.c3 { bottom: 14%; right: -2%; animation-delay: -1s; }
+.c2::before { color: #f0c674; }
+.c3::before { color: #f78c6c; }
 
 /* Sadaļas */
 .section { padding: 5rem 0; border-top: 1px solid var(--line); }
@@ -368,7 +388,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 0 4.5rem; }
-  .editor { transform: none; }
+  .stack { max-width: 30rem; width: 100%; margin: 1rem auto 0; }
   .skill-grid { grid-template-columns: 1fr 1fr; }
   .project { grid-template-columns: 1fr; }
   .project:nth-child(even) .preview { order: 0; }
