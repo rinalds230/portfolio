@@ -7,7 +7,7 @@
   --accent-ink: #ffffff;
   --line: #d4dcd5;
   --heading: "Bricolage Grotesque", system-ui, sans-serif;
-  --body: "Newsreader", Georgia, serif;
+  --body: "Source Serif 4", Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
